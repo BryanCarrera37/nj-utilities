@@ -1,0 +1,54 @@
+name: Publish to npm
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installing dependencies
+        run: npm install
+
+      - name: Building the project
+        run: npm run build
+
+      - name: Testing
+        run: npm run test
+
+  publish:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installing dependencies
+        run: npm install
+
+      - name: Building the project
+        run: npm run build
+
+      - name: Configuring npm authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Sleeping for 3 seconds
+        run: sleep 3
+
+      - name: Publishing to npm
+        run: npm run publish:npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

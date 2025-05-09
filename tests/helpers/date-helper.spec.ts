@@ -1,10 +1,15 @@
-import { getCurrentDateFormatted, getDateFormatted, getDateFromString, getDateReduced, getTheDiffIn, DEFAULT_DATE_FORMAT } from '@/helpers/date-helper';
+import {
+  getCurrentDateFormatted,
+  getDateFormatted,
+  getDateFromString,
+  getDateReduced,
+  getTheDiffIn,
+  DEFAULT_DATE_FORMAT,
+} from '@/helpers/date-helper';
 import moment from 'moment';
 
 describe('date-helper', () => {
-
-  describe('DEFAULT_DATE_FORMAT', () => 
-    expect(DEFAULT_DATE_FORMAT).toBe('YYYY-MM-DD HH:mm:ss'));
+  describe('DEFAULT_DATE_FORMAT', () => expect(DEFAULT_DATE_FORMAT).toBe('YYYY-MM-DD HH:mm:ss'));
 
   describe('getCurrentDateFormatted', () => {
     it('should return the current date formatted with default format', () =>

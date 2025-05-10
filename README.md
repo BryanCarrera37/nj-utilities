@@ -13,6 +13,7 @@ Also, there's some defined values for regex and common messages and values for r
 ## Instructions
 
 ### Installation
+
 ```bash
 $ npm install @bryancm/nj-utilities
 ```
@@ -27,10 +28,14 @@ $ yarn add @bryancm/nj-utilities
 
 After adding the library in your project you can use any of the functionalities listed below:
 
+- Builders
+  - logger
 - Const Values
   - regex
 - Enums
   - activated-field-values
+  - console-text-colors
+  - log-level
   - server-message
 - Helpers
   - array-helper
@@ -40,6 +45,13 @@ After adding the library in your project you can use any of the functionalities 
   - object-helper
   - string-helper
   - values-helper
+- Interfaces
+  - logger-file-config
+  - logger
+- Services
+  - console-logger
+  - file-logger
+  - logger
 
 For example, within the values-helper file you can find a good function to get the values prepared for a WHERE-IN SQL Condition. The name of that function is getValuesPreparedForWhereClauseWithIn and the usage is like:
 

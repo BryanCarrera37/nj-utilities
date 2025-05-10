@@ -1,7 +1,7 @@
 {
   "name": "@bryancm/nj-utilities",
   "description": "This is a collection of utility functions for JavaScript and Node.js. You can use them in your projects to simplify common tasks and improve code readability.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "author": {
     "name": "Bryan Carrera",

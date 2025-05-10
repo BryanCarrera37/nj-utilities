@@ -1,4 +1,4 @@
-import { Regex } from '@/const-values';
+import { Regex } from './../const-values';
 
 // Always have to receive the value DDMMYYYY
 export const addDelimiterToTheStringDate = (stringDate: string, delimiter: string): string => {

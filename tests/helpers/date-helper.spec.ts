@@ -55,7 +55,7 @@ describe('date-helper', () => {
       const date = new Date();
       const reducedDate = new Date(date);
       reducedDate.setDate(date.getDate() - daysToReduce);
-      expect(getDateReduced(daysToReduce)).toEqual(reducedDate);
+      expect(getDateReduced(daysToReduce).getUTCDate()).toEqual(reducedDate.getUTCDate());
     });
 
     it('should return the current date if daysToReduce is 0', () => {

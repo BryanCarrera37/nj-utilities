@@ -31,7 +31,7 @@ describe('FileLoggerService', () => {
 
       expect(logLineParts[0]).toContain(`[${LogLevel.INFO}]`);
       expect(logLineParts[1]).toMatch(timestampRegex);
-      expect(logLineParts[2]).toBe(message);
+      expect(logLineParts[2]).toBe(message + '\n');
       expect(logLineParts.length).toBe(3);
     });
   });
